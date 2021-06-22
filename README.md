@@ -1,27 +1,25 @@
-# PUTM_Tools
+# STM_flasher
 
-Share your tools and use them.
+## Requirements:
+* OpenOCD (https://github.com/xpack-dev-tools/openocd-xpack/releases)
+* STM32CubeMx (optional)
+* Python3
 
-## Using tool
+## Usage
+To flash STM32 you need executable file or source code of whole project.
 
-To use tools from this repository use:
+To flash device use script flash.py
+* Linux:
 ```bash
-git clone https://github.com/PUT-Motorsport/PUTM_Tools.git
-git checkout <tool_name>
-```
-Or you can swich to tool's branch and download it as archive (*.zip)
-
-## Adding tool
-To add new tool just clone repository, create its branch and push it
-
-```bash
-git clone https://github.com/PUT-Motorsport/PUTM_Tools.git
-git checkout -b <tool_name>
-# Add code
-git add -A
-git commit 
-git push origin <tool_name>
+./flash.py -b stm32f1 -f project.elf
 ```
 
-Remeber to add notes about using tools and how to prepare environment
+* Windows
+```bash
+python flash.py -b stm32f1 -f project.elf
+```
+
+If you just have source code first you need STM32CubeMX from ST (see https://www.st.com/en/development-tools/stm32cubemx.html) to generate required library or files and compile whole project.
+
+
 
